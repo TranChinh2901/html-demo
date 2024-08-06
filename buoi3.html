@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
+</head>
+
+<style>
+    
+
+.container{
+  /* margin: 0;
+  padding: 0; */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box; 
+  font-family: cursive;
+ 
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color  :#1a8902;
+  color: #fff;
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+/* LOGO */
+.logo {
+  font-size: 32px;
+}
+
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li:hover {
+  background-color: #4c9e9e;
+  border-radius: 5px;
+  transition: 0.3s ease;  
+  z-index: 1000;
+}
+
+.menu li {
+  padding: 5px 14px;
+  scroll-behavior: smooth;
+}
+
+/* DROPDOWN MENU */
+.services {
+  position: relative; 
+}
+
+.dropdown {
+  background-color: #436d3a;
+  padding: 1em 0;
+  position: absolute; 
+  display: none;
+  border-radius: 8px;
+  top: 35px;
+  z-index: 1000;
+}
+
+.dropdown li + li {
+  margin-top: 10px;
+}
+
+.dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+  z-index: 1000;
+}
+
+.dropdown li:hover {
+  background-color: #4c9e9e;
+  z-index: 1000;
+}
+
+.services:hover .dropdown {
+  display: block;
+  z-index: 1000;
+}
+
+input[type=checkbox] {
+  display: none;
+} 
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+.button{
+  background-color:#1a8902;
+  width: 90px;
+  height: 40px;
+  color: white;
+  border-radius: 5px;
+  border: 3px solid rgb(255, 255, 255);
+  font-size: 17px;
+  cursor: pointer;
+  font-family: cursive;
+}
+.button:hover{
+ background-color: aliceblue;
+ /* cursor: pointer; */
+ color: black;
+}
+
+@media (max-width: 768px) {
+.navbar{
+  padding: 10px;
+  }
+ .menu {
+    display:none;
+    position: absolute;
+    background-color:#1a8902;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+    z-index: 1000;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color:#4c9e9e;
+    transition: 0.3s ease;
+    /* z-index: 1000; */
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+    
+  }
+
+  input[type=checkbox]:checked ~ .menu {
+    display: block;
+   
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .dropdown {
+    left: 50%;
+    top: 30px;
+    z-index: 1000;
+    transform: translateX(35%);
+  }
+
+  .dropdown li:hover {
+    background-color: #4c9e9e;
+  }
+  .swiper {
+      width: 100%;
+      height: 300px;
+      
+    }
+  .swiper-wrapper{
+    width: 100%;
+    height: 300px;
+  }
+  .swiper-slide{
+    width: 100%;
+    height: 300px;
+  }
+  .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+
+    .gioithieu button{
+      float: right;
+    }
+    .video{
+      text-align: center;
+      margin-right: 30px;
+    }
+    .video video{
+      margin-top: 18px; 
+    }
+   .video p{
+    display: none;
+   }
+   .flexbox .right{
+    display: none;
+   }
+}
+@media (max-width: 1200px){
+  .left{
+    width: 1000px;
+  }
+  .right{
+    width: 0px;
+    height: 0px;
+  }
+   .right {
+    display: none;
+   }
+   
+}
+.swiper {
+      width: 100%;
+      /* height: 600px; */
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+
+
+.information{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.gioithieu{
+  width: 800px;
+ 
+}
+.gioithieu button{
+  width: 120px; 
+  height: 30px; 
+  margin-top: 20px; 
+  background-color: rgb(11, 114, 174); 
+  color: white; 
+  border: none; 
+  border-radius: 5px;
+}
+.gioithieu button:hover{
+  background-color: #4c9e9e;
+  cursor: pointer;
+}
+.video{
+  width: 500px;
+  margin-left: 30px;
+}
+.video video{
+  border: 6px solid rgb(0, 237, 24);
+  border-radius: 5px;
+}
+
+    
+  
+    #about{
+      scroll-behavior: smooth;
+    }
+     
+     .taisao{
+      margin-top: 40px;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+     }
+     /* .taisao h2{
+       border-top: 3px solid black; 
+  }  */
+     .taisao-p{
+    color: #000000;
+      font-size: 25px;
+     }
+     .flexbox{
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      display: flex;
+      /* justify-content: center;
+      align-items: center; */
+      margin-top: 30px;
+      /* flex-wrap: wrap; */
+     }
+     /* h1{
+      width: 320px;
+      height:  100%;
+      margin: 20px;
+      background-color: rgb(101, 113, 113);
+      
+    }  */
+    .left{
+      display: flex;
+      width: 100%;
+      height: 100%;
+    justify-content: center;
+      flex-wrap: wrap;
+      transition: transform .3s;
+    }
+     .flexbox .left{
+      width: 950px;
+      height: 100%;
+      background-color: #ffffff;
+     }
+     .right {
+      width: 570px;
+      height: 100%;
+      background-color: #ffffff;
+     justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      margin-top: 30px;
+     }
+     .right h3{
+      display: none;
+     }
+     .right img{
+      width: 100%;
+      height: 100%;
+     
+     }
+     .left-flexbox{
+      width: 335px;
+      height:  170px;
+      margin: 20px;
+      background-color: rgb(249, 249, 249);
+      padding: 30px 20px;
+      box-shadow: 4px 4px 50px rgba(0, 0, 0, .15);
+      border-radius: 5px;
+     }
+     .left-flexbox:hover{
+      transform: translate(10px);
+      transition: 0.5s;
+     }
+     .left-flexbox:hover .h3-hover{
+      color: red;
+     }
+     .left-flexbox .in{
+      display: flex;
+      align-items: center;
+     }
+     .left-flexbox p{
+      margin-left: 25px;
+      margin-top: 20px;
+      color: #677788;
+     }
+     .in i{
+      margin-right: 10px;
+      color: red;
+      font-size: 20px;
+     }
+     .in h3{
+      transition: color 0.3s;
+     }
+    
+</style>
+<body>
+ <div class="container">
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">CHINH</div>
+
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+
+      
+      <input type="checkbox" id="checkbox_toggle" />
+      <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+     
+      <div class="menu">
+
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+
+        <li class="services">
+          <a href="#services">Services</a>
+          <i class="fa-solid fa-caret-down"></i>
+          
+          <ul class="dropdown">
+            <li><a href="#">Dropdown 1</a></li>
+            <li><a href="#">Dropdown 2</a></li>
+            <li><a href="#">Dropdown 2</a></li>
+            <li><a href="#">Dropdown 3</a></li>
+            <li><a href="#">Dropdown 4</a></li>
+          </ul>
+
+        </li>
+
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Contact</a></li>
+        <button class="button">Login</button>
+        <button class="button">Signup</button>
+      </div>
+    </ul>
+  </nav>
+ 
+  <div class="swiper mySwiper">
+    <div  class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img class="img" src="https://images.unsplash.com/photo-1721742145235-902c04e6d76d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1719937206255-cc337bccfc7d?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1714386008526-ed85abfbcfcb?q=80&w=1775&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      </div>
+
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1722136682317-a06fda3ebeba?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://plus.unsplash.com/premium_photo-1718204439001-c1946b9039ec?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://plus.unsplash.com/premium_photo-1718204439001-c1946b9039ec?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1722218529958-e37e4ed4a194?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://plus.unsplash.com/premium_photo-1722025274771-cd0adaf26f08?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="https://images.unsplash.com/photo-1722343655851-c996945db672?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      </div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <div id="about" class="information" >
+    <div class="gioithieu">
+      <h2 >Giới thiệu công ty</h2>
+      <p style="width: 210px; height: 2px; background-color: #08a10d; margin-top: 5px;"></p>
+      <p style="margin-top: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, vel pariatur non provident nihil ipsa reprehenderit similique libero at porro sunt iusto, necessitatibus quo, itaque labore alias dolore! Maiores, quos!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, vel pariatur non provident nihil ipsa reprehenderit similique libero at porro sunt iusto, necessitatibus quo, itaque labore alias dolore! Maiores, quos!
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, vel pariatur non provident nihil ipsa reprehenderit similique libero at porro sunt iusto, necessitatibus quo, itaque labore alias dolore! Maiores, quos!
+      </p>
+      <button >Xem thêm</button>
+    </div>
+    <div class="video">
+      <h2>Video</h2>
+      <p style="width: 70px; height: 2px; background-color: #08a10d;  margin-bottom: 5px;"></p>
+
+      <video width="400" controls >
+        <source src="image/video.mp4" type="video/mp4">
+        Trình duyệt của bạn không hỗ trợ thẻ video.
+      </video>
+    </div>
+  </div>
+ 
+    <div class="taisao" >
+      <p class="taisao-p"> <strong>~~~~~~~~~~~~~</strong></p>
+      <h2 style="color: #1a8902;">TẠI SAO NÊN CHỌN ITGREEN ?</h2>
+      <P id="services" style="margin-top: 10px; color: #677788;">Dịch vụ thiết kế website chuyên nghiệp tại ITGREEN tối ưu trên công cụ tìm kiếm Google, thân <br> thiện với người dùng với hơn 2000 khách hàng đã sử dụng.  </P>
+    </div>
+
+
+    <div class="flexbox">
+      <div class="left">
+        <div class="left-flexbox">
+         <div class="in">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3 class="h3-hover">Website dễ dàng sử dụng</h3>
+         </div>
+         <p>Thuận tiện cho cả người quản trị website và khách sử dụng.</p>
+        </div>
+          
+        <div class="left-flexbox">
+          <div class="in">
+           <i class="fa-solid fa-circle-check"></i>
+           <h3 class="h3-hover">Tiết kiệm chi phí</h3>
+          </div>
+          <p>Đến với ITGreen để tận hưởng chất lượng cao với chi phí thấp.</p>
+         </div>
+
+         <div class="left-flexbox">
+          <div class="in">
+           <i class="fa-solid fa-circle-check"></i>
+           <h3 class="h3-hover">Website chuẩn Seo</h3>
+          </div>
+          <p>Website chuẩn seo giúp tăng thứ hạn tìm kiếm</p>
+         </div>
+
+         <div class="left-flexbox">
+          <div class="in">
+           <i class="fa-solid fa-circle-check"></i>
+           <h3 class="h3-hover">Miễn phí 01 năm hosting 3GB</h3>
+          </div>
+          <p>Thiết kế web tại ITGreen đươc miễn phí 01 năm sử dụng hosting SSD </p>
+         </div>
+
+         <div class="left-flexbox">
+          <div class="in">
+           <i class="fa-solid fa-circle-check"></i>
+           <h3 class="h3-hover">Miễn phí bảo mật SSL(https)</h3>
+          </div>
+          <p>ITGreen miễn phí chứng chỉ bảo mật SSL cho tất cả các gói Web sử dụng tại ITGreen</p>
+         </div>
+
+         <div class="left-flexbox">
+          <div class="in">
+           <i class="fa-solid fa-circle-check"></i>
+           <h3 class="h3-hover">Miễn phí phiên bản Mobile</h3>
+          </div>
+          <p>Tẩt cả các gói website tại ITGreen đều làm chuẩn di động, thân thiện với tất cả các thiết bị.</p>
+         </div>
+      </div>
+      <div class="right">
+        
+        <img src="https://itgreen.com.vn/wp-content/themes/template/module/thiet-ke-web/css/wp-content/themes/hazo/assets/images/tkwtg/feature.png" class="sp-no-webp" alt="Tính năng"   srcset="https://itgreen.com.vn/wp-content/themes/template/module/thiet-ke-web/css/wp-content/themes/hazo/assets/images/tkwtg/feature.png">
+      </div>
+    </div>
+  
+
+
+  <!-- <div class="content"  >
+    <h1>chính 1</h1>
+    <h1>chính 2</h1>
+    <h1>chính 3</h1>
+    <h1>chính 4</h1>
+   
+  </div> -->
+
+
+  
+
+ </div>
+ <script>
+   var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+ </script>
+</body>
+
+</html>
